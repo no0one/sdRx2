@@ -38,7 +38,7 @@ bool GossipHello_npc_arena_honor(Player* pPlayer, Creature *pCreature)
     pPlayer->ADD_GOSSIP_ITEM_ID(GOSSIP_ICON_CHAT, GOSSIP_ITEM_HONOR_TO_ARENA1, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 2);
     pPlayer->ADD_GOSSIP_ITEM_ID(GOSSIP_ICON_CHAT, GOSSIP_ITEM_ARENA_TO_HONOR, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 3);
     pPlayer->ADD_GOSSIP_ITEM_ID(GOSSIP_ICON_CHAT, GOSSIP_ITEM_ARENA_TO_HONOR1, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 4);
-    pPlayer->SEND_GOSSIP_MENU(3961,pCreature->GetObjectGuid());
+    pPlayer->SEND_GOSSIP_MENU(3961,pCreature->GetGUID());
     return true;
 }
 
@@ -95,5 +95,5 @@ void AddSC_npc_arena_honor()
     newscript->Name="npc_arena_honor";
     newscript->pGossipHello =  &GossipHello_npc_arena_honor;
     newscript->pGossipSelect = &GossipSelect_npc_arena_honor;
-    newscript->RegisterSelf();
+    newscript->RegisterSelf(false);
 }
