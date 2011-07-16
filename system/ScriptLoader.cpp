@@ -7,9 +7,12 @@
 // battlegrounds
 extern void AddSC_battleground();
 
-// custom
-extern void AddSC_mob_teleguy();
+//custom
+extern void AddSC_custom_gameobjects();
+extern void AddSC_custom_items();
+extern void AddSC_custom_npcs();
 extern void AddSC_npc_arena_honor();
+extern void AddSC_mob_teleguy();
 
 // OutdoorPvP zone scripts
 extern void AddSC_outdoor_pvp_eastern_plaguelands();
@@ -538,9 +541,13 @@ void AddScripts()
     // battlegrounds
     AddSC_battleground();
 
-    // custom
-    AddSC_mob_teleguy();
+    //custom
+    AddSC_custom_gameobjects();
+    AddSC_custom_items();
+    AddSC_custom_npcs();
     AddSC_npc_arena_honor();
+    AddSC_mob_teleguy();
+
     AddSC_outdoor_pvp_eastern_plaguelands();                // OutdoorPvP zone scripts. Must be _before_ map scripts call!
     AddSC_outdoor_pvp_silithus();
     AddSC_outdoor_pvp_eastern_kingdoms();                   // OutdoorPvP
