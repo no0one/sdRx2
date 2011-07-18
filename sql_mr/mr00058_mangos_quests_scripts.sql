@@ -3,6 +3,27 @@ DELETE FROM scripted_areatrigger WHERE entry=3626;
 INSERT INTO scripted_areatrigger VALUES (3626, 'at_vaelastrasz');
 
 -- -------------------------
+-- -Quest:: 11656
+-- -------------------------
+-- better support
+
+UPDATE `creature_template` SET `AIName` = 'EventAI', `ScriptName` = '' WHERE `entry` = '25510';
+DELETE FROM `creature_ai_scripts` WHERE (`id`='2551051');
+INSERT INTO `creature_ai_scripts` VALUES ('2551051', '25510', '8', '0', '100', '1', '45692', '-1', '0', '0', '33', '25510', '6', '0', '11', '64561', '0', '22', '41', '240000', '0', '0', 'ytdb-q11656');
+
+UPDATE `creature_template` SET `AIName` = 'EventAI', `ScriptName` = '' WHERE `entry` = '25511';
+DELETE FROM `creature_ai_scripts` WHERE (`id`='2551151');
+INSERT INTO `creature_ai_scripts` VALUES ('2551151', '25511', '8', '0', '100', '1', '45692', '-1', '0', '0', '33', '25511', '6', '0', '11', '64561', '0', '22', '41', '240000', '0', '0', 'ytdb-q11656');
+
+UPDATE `creature_template` SET `AIName` = 'EventAI', `ScriptName` = '' WHERE `entry` = '25512';
+DELETE FROM `creature_ai_scripts` WHERE (`id`='2551251');
+INSERT INTO `creature_ai_scripts` VALUES ('2551251', '25512', '8', '0', '100', '1', '45692', '-1', '0', '0', '33', '25512', '6', '0', '11', '64561', '0', '22', '41', '240000', '0', '0', 'ytdb-q11656');
+
+UPDATE `creature_template` SET `AIName` = 'EventAI', `ScriptName` = '' WHERE `entry` = '25513';
+DELETE FROM `creature_ai_scripts` WHERE (`id`='2551351');
+INSERT INTO `creature_ai_scripts` VALUES ('2551351', '25513', '8', '0', '100', '1', '45692', '-1', '0', '0', '33', '25513', '6', '0', '11', '64561', '0', '22', '41', '240000', '0', '0', 'ytdb-q11656');
+
+-- -------------------------
 -- Quest :: 12644
 -- -------------------------
 
@@ -20,6 +41,7 @@ INSERT INTO `gameobject` VALUES ('200000','190643','571','3','1','5545.45','5767
 DELETE from creature where id=28537;
 INSERT into creature VALUES
 (2853701,28537,571,1,1,0,0,5550.404,5768.214,-78.02,1.278,300,0,0,0,0,0,0);
+UPDATE `creature_template` SET `minhealth` = 0, `maxhealth` = 1 WHERE `entry` = 28537;
 
 DELETE from spell_script_target WHERE entry in(51932,51931,51933);
 INSERT into spell_script_target VALUES
